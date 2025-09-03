@@ -1,0 +1,19 @@
+Exact Authorization Header:
+Signature keyId="neo-server.rozana.in|3bd6f47a-d2ea-4210-a4ad-2a99dd66585b|ed25519",algorithm="ed25519",created="1756904845",expires="1756908445",headers="(created) (expires) digest",signature="A4m09kdJ2/PGSe3fOud991MgcqE5kBkHMCMAppd4eczFRvvyG79SXFpLe9K3GE/f8ArsFdDUQjCTsLr3YUVpBw=="
+
+Exact Payload:
+{
+    "subscriber_id": "neo-server.rozana.in",
+    "domain": "ONDC:RET10",
+    "ukId": "3bd6f47a-d2ea-4210-a4ad-2a99dd66585b",
+    "country": "IND",
+    "city": "std:080",
+    "type": "BAP"
+}
+
+Exact Curl Command:
+curl --location 'https://preprod.registry.ondc.org/v2.0/lookup' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Signature keyId="neo-server.rozana.in|3bd6f47a-d2ea-4210-a4ad-2a99dd66585b|ed25519",algorithm="ed25519",created="1756904845",expires="1756908445",headers="(created) (expires) digest",signature="A4m09kdJ2/PGSe3fOud991MgcqE5kBkHMCMAppd4eczFRvvyG79SXFpLe9K3GE/f8ArsFdDUQjCTsLr3YUVpBw=="' \
+  --data '{"subscriber_id":"neo-server.rozana.in","domain":"ONDC:RET10","ukId":"3bd6f47a-d2ea-4210-a4ad-2a99dd66585b","country":"IND","city":"std:080","type":"BAP"}'

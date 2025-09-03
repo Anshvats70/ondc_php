@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDC Webhook Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h3 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            font-family: monospace;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .response {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success {
+            border-color: #28a745;
+            background-color: #d4edda;
+        }
+        .error {
+            border-color: #dc3545;
+            background-color: #f8d7da;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 ONDC Webhook Test Interface</h1>
+        
+        <div class="info">
+            <strong>Endpoint:</strong> <code>http://localhost/ondc/src/on_search_callback.php</code><br>
+            <strong>Method:</strong> POST<br>
+            <strong>Content-Type:</strong> application/json
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Test Request Data</h3>
+            <p>Modify the JSON below to test different search scenarios:</p>
+            <textarea id="requestData">{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "search",
+    "bap_id": "test-bap.ondc.org",
+    "bap_uri": "https://test-bap.ondc.org",
+    "transaction_id": "txn_test_123",
+    "message_id": "msg_test_123",
+    "timestamp": "2025-09-03T15:24:11+02:00",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "intent": {
+      "item": {
+        "descriptor": {
+          "name": "Rice"
+        },
+        "category_id": "Foodgrains"
+      },
+      "fulfillment": {
+        "locations": [
+          {
+            "city": {
+              "name": "Delhi"
+            },
+            "state": {
+              "name": "Delhi"
+            },
+            "country": {
+              "name": "India"
+            }
+          }
+        ]
+      }
+    }
+  }
+}</textarea>
+        </div>
+
+        <div class="test-section">
+            <h3>🧪 Quick Test Buttons</h3>
+            <button onclick="testRice()">Test Rice Search</button>
+            <button onclick="testApples()">Test Apple Search</button>
+            <button onclick="testChocolate()">Test Chocolate Search</button>
+            <button onclick="testInvalid()">Test Invalid Request</button>
+            <button onclick="sendCustomRequest()">Send Custom Request</button>
+        </div>
+
+        <div class="test-section">
+            <h3>📤 Send Request</h3>
+            <button onclick="sendCustomRequest()" style="background-color: #27ae60;">🚀 Send Request</button>
+            <div id="response" class="response" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>📚 Sample Requests</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h4>🍚 Rice Search</h4>
+                    <button onclick="loadSample('rice')">Load Sample</button>
+                </div>
+                <div>
+                    <h4>🍎 Apple Search</h4>
+                    <button onclick="loadSample('apple')">Load Sample</button>
+                </div>
+                <div>
+                    <h4>🍫 Chocolate Search</h4>
+                    <button onclick="loadSample('chocolate')">Load Sample</button>
+                </div>
+                <div>
+                    <h4>🥛 Dairy Search</h4>
+                    <button onclick="loadSample('dairy')">Load Sample</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const samples = {
+            rice: {
+                "context": {
+                    "domain": "ONDC:RET10",
+                    "country": "IND",
+                    "city": "std:080",
+                    "action": "search",
+                    "bap_id": "test-bap.ondc.org",
+                    "bap_uri": "https://test-bap.ondc.org",
+                    "transaction_id": "txn_rice_" + Date.now(),
+                    "message_id": "msg_rice_" + Date.now(),
+                    "timestamp": new Date().toISOString(),
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "intent": {
+                        "item": {
+                            "descriptor": {"name": "Rice"},
+                            "category_id": "Foodgrains"
+                        },
+                        "fulfillment": {
+                            "locations": [{
+                                "city": {"name": "Delhi"},
+                                "state": {"name": "Delhi"},
+                                "country": {"name": "India"}
+                            }]
+                        }
+                    }
+                }
+            },
+            apple: {
+                "context": {
+                    "domain": "ONDC:RET10",
+                    "country": "IND",
+                    "city": "std:080",
+                    "action": "search",
+                    "bap_id": "test-bap.ondc.org",
+                    "bap_uri": "https://test-bap.ondc.org",
+                    "transaction_id": "txn_apple_" + Date.now(),
+                    "message_id": "msg_apple_" + Date.now(),
+                    "timestamp": new Date().toISOString(),
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "intent": {
+                        "item": {
+                            "descriptor": {"name": "Apples"},
+                            "category_id": "Fruits"
+                        },
+                        "fulfillment": {
+                            "locations": [{
+                                "city": {"name": "Delhi"},
+                                "state": {"name": "Delhi"},
+                                "country": {"name": "India"}
+                            }]
+                        }
+                    }
+                }
+            },
+            chocolate: {
+                "context": {
+                    "domain": "ONDC:RET10",
+                    "country": "IND",
+                    "city": "std:080",
+                    "action": "search",
+                    "bap_id": "test-bap.ondc.org",
+                    "bap_uri": "https://test-bap.ondc.org",
+                    "transaction_id": "txn_choc_" + Date.now(),
+                    "message_id": "msg_choc_" + Date.now(),
+                    "timestamp": new Date().toISOString(),
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "intent": {
+                        "item": {
+                            "descriptor": {"name": "Chocolate"},
+                            "category_id": "Snacks"
+                        },
+                        "fulfillment": {
+                            "locations": [{
+                                "city": {"name": "Delhi"},
+                                "state": {"name": "Delhi"},
+                                "country": {"name": "India"}
+                            }]
+                        }
+                    }
+                }
+            },
+            dairy: {
+                "context": {
+                    "domain": "ONDC:RET10",
+                    "country": "IND",
+                    "city": "std:080",
+                    "action": "search",
+                    "bap_id": "test-bap.ondc.org",
+                    "bap_uri": "https://test-bap.ondc.org",
+                    "transaction_id": "txn_dairy_" + Date.now(),
+                    "message_id": "msg_dairy_" + Date.now(),
+                    "timestamp": new Date().toISOString(),
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "intent": {
+                        "item": {
+                            "descriptor": {"name": "Milk"},
+                            "category_id": "Dairy"
+                        },
+                        "fulfillment": {
+                            "locations": [{
+                                "city": {"name": "Delhi"},
+                                "state": {"name": "Delhi"},
+                                "country": {"name": "India"}
+                            }]
+                        }
+                    }
+                }
+            }
+        };
+
+        function loadSample(type) {
+            if (samples[type]) {
+                document.getElementById('requestData').value = JSON.stringify(samples[type], null, 2);
+            }
+        }
+
+        function testRice() {
+            loadSample('rice');
+            sendCustomRequest();
+        }
+
+        function testApples() {
+            loadSample('apple');
+            sendCustomRequest();
+        }
+
+        function testChocolate() {
+            loadSample('chocolate');
+            sendCustomRequest();
+        }
+
+        function testInvalid() {
+            document.getElementById('requestData').value = JSON.stringify({
+                "context": {
+                    "domain": "ONDC:RET10"
+                }
+            }, null, 2);
+            sendCustomRequest();
+        }
+
+        async function sendCustomRequest() {
+            const requestData = document.getElementById('requestData').value;
+            const responseDiv = document.getElementById('response');
+            
+            try {
+                // Validate JSON
+                const jsonData = JSON.parse(requestData);
+                
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response';
+                responseDiv.textContent = 'Sending request...';
+                
+                const response = await fetch('src/on_search_callback.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: requestData
+                });
+                
+                const responseText = await response.text();
+                
+                if (response.ok) {
+                    responseDiv.className = 'response success';
+                    responseDiv.textContent = `✅ HTTP ${response.status} OK\n\n${responseText}`;
+                } else {
+                    responseDiv.className = 'response error';
+                    responseDiv.textContent = `❌ HTTP ${response.status} Error\n\n${responseText}`;
+                }
+                
+            } catch (error) {
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response error';
+                responseDiv.textContent = `❌ Error: ${error.message}`;
+            }
+        }
+
+        // Load default sample
+        loadSample('rice');
+    </script>
+</body>
+</html>

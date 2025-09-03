@@ -1,0 +1,1642 @@
+[2025-09-03 15:16:59] 🔍 Received ONDC Search Request
+[2025-09-03 15:16:59] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "3b1fa2be-3921-4a8d-8cfc-232bed5c7447",
+        "message_id": "f19bba22-1ec3-4521-8f97-9bd11609db4b",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:16:59] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:16:59] Processing search for: Rice
+[2025-09-03 15:16:59] ✅ Search processed successfully
+[2025-09-03 15:16:59] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "3b1fa2be-3921-4a8d-8cfc-232bed5c7447",
+        "message_id": "03ac736f-e7a1-46b6-8a39-543de6f5b609",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:16:59] 🔍 Received ONDC Search Request
+[2025-09-03 15:16:59] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "msg_68b83fcbb3520",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:16:59] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:16:59] Processing search for: Rice
+[2025-09-03 15:16:59] ✅ Search processed successfully
+[2025-09-03 15:16:59] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "a4945db0-0a4f-4199-9f2a-828f47bce6ad",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:16:59] 🔍 Received ONDC Search Request
+[2025-09-03 15:16:59] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b83fcbb50fa",
+        "message_id": "msg_68b83fcbb5106",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Apples"
+                },
+                "category_id": "Fruits"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:16:59] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Apples",
+    "category": "Fruits",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:16:59] Processing search for: Apples
+[2025-09-03 15:16:59] ✅ Search processed successfully
+[2025-09-03 15:16:59] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b83fcbb50fa",
+        "message_id": "529a3af8-ead5-4de5-a1be-10fd75c42a67",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Fresh Apples",
+                                "short_desc": "Fresh red apples from Kashmir",
+                                "long_desc": "Fresh red apples from Kashmir",
+                                "brand": "Kashmir Fresh",
+                                "images": [
+                                    "https:\/\/example.com\/apples1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "180"
+                            },
+                            "category_id": "Fruits",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:16:59] 🔍 Received ONDC Search Request
+[2025-09-03 15:16:59] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10"
+    }
+}
+[2025-09-03 15:16:59] ❌ Error processing search: Missing required field: message
+[2025-09-03 15:16:59] 🔍 Received ONDC Search Request
+[2025-09-03 15:16:59] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b83fcbb6c29",
+        "message_id": "msg_68b83fcbb6c2d",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Chocolate"
+                },
+                "category_id": "Snacks"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:16:59] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Chocolate",
+    "category": "Snacks",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:16:59] Processing search for: Chocolate
+[2025-09-03 15:16:59] ✅ Search processed successfully
+[2025-09-03 15:16:59] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b83fcbb6c29",
+        "message_id": "92e2fffd-979c-4ec2-a837-014c9f67170f",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_003",
+                            "descriptor": {
+                                "name": "Dairy Milk Chocolate",
+                                "short_desc": "Classic dairy milk chocolate bar",
+                                "long_desc": "Classic dairy milk chocolate bar",
+                                "brand": "Cadbury",
+                                "images": [
+                                    "https:\/\/example.com\/chocolate1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "50"
+                            },
+                            "category_id": "Snacks",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:23:38] 🔍 Received ONDC Search Request
+[2025-09-03 15:23:38] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "11078bb0-66cd-4d7a-a45b-ea9aa6c63092",
+        "message_id": "22500f96-a335-426c-a324-2ad111d19379",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:23:38] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:23:38] Processing search for: Rice
+[2025-09-03 15:23:38] ✅ Search processed successfully
+[2025-09-03 15:23:38] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "11078bb0-66cd-4d7a-a45b-ea9aa6c63092",
+        "message_id": "e144448d-0f5c-409d-95dc-e95f1c4385e7",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:23:38] 🔍 Received ONDC Search Request
+[2025-09-03 15:23:38] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b8415a19994",
+        "message_id": "msg_68b8415a19998",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:23:38] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:23:38] Processing search for: Rice
+[2025-09-03 15:23:38] ✅ Search processed successfully
+[2025-09-03 15:23:38] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b8415a19994",
+        "message_id": "52410e04-c657-4496-b334-f615b15c8b12",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:23:38] 🔍 Received ONDC Search Request
+[2025-09-03 15:23:38] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b8415a1aadc",
+        "message_id": "msg_68b8415a1aadf",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Apples"
+                },
+                "category_id": "Fruits"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:23:38] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Apples",
+    "category": "Fruits",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:23:38] Processing search for: Apples
+[2025-09-03 15:23:38] ✅ Search processed successfully
+[2025-09-03 15:23:38] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b8415a1aadc",
+        "message_id": "5fde233a-0066-4f54-8848-5727639a8643",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Fresh Apples",
+                                "short_desc": "Fresh red apples from Kashmir",
+                                "long_desc": "Fresh red apples from Kashmir",
+                                "brand": "Kashmir Fresh",
+                                "images": [
+                                    "https:\/\/example.com\/apples1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "180"
+                            },
+                            "category_id": "Fruits",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:23:38] 🔍 Received ONDC Search Request
+[2025-09-03 15:23:38] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10"
+    }
+}
+[2025-09-03 15:23:38] ❌ Error processing search: Missing required field: message
+[2025-09-03 15:23:38] 🔍 Received ONDC Search Request
+[2025-09-03 15:23:38] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b8415a1c422",
+        "message_id": "msg_68b8415a1c427",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Chocolate"
+                },
+                "category_id": "Snacks"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:23:38] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Chocolate",
+    "category": "Snacks",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:23:38] Processing search for: Chocolate
+[2025-09-03 15:23:38] ✅ Search processed successfully
+[2025-09-03 15:23:38] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b8415a1c422",
+        "message_id": "9bd65015-aef7-4e9a-a6d5-7a03c7712fd3",
+        "timestamp": "2025-09-03T15:23:38+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_003",
+                            "descriptor": {
+                                "name": "Dairy Milk Chocolate",
+                                "short_desc": "Classic dairy milk chocolate bar",
+                                "long_desc": "Classic dairy milk chocolate bar",
+                                "brand": "Cadbury",
+                                "images": [
+                                    "https:\/\/example.com\/chocolate1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "50"
+                            },
+                            "category_id": "Snacks",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:24:11] 🔍 Received ONDC Search Request
+[2025-09-03 15:24:11] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "829d3397-5ffc-45b6-a8a8-d45743e2a2c2",
+        "message_id": "d644f682-57e0-4791-a063-30d950330844",
+        "timestamp": "2025-09-03T15:24:11+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:24:11] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:24:11] Processing search for: Rice
+[2025-09-03 15:24:11] ✅ Search processed successfully
+[2025-09-03 15:24:11] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "829d3397-5ffc-45b6-a8a8-d45743e2a2c2",
+        "message_id": "d1c152b0-fe7c-4e9a-9f75-1e14b4048f22",
+        "timestamp": "2025-09-03T15:24:11+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:24:11] 🔍 Received ONDC Search Request
+[2025-09-03 15:24:11] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_test_68b8417b35117",
+        "message_id": "msg_test_68b8417b3512b",
+        "timestamp": "2025-09-03T15:24:11+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:24:11] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:24:11] Processing search for: Rice
+[2025-09-03 15:24:11] ✅ Search processed successfully
+[2025-09-03 15:24:11] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_test_68b8417b35117",
+        "message_id": "f9ee8296-d67c-42c3-804d-4f97f1493c7d",
+        "timestamp": "2025-09-03T15:24:11+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-03 15:26:16] 🔍 Received ONDC Search Request
+[2025-09-03 15:26:16] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "msg_68b83fcbb3520",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 15:26:16] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-03 15:26:16] Processing search for: Rice
+[2025-09-03 15:26:16] ✅ Search processed successfully
+[2025-09-03 15:26:16] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "d785ac2d-9513-46b5-b0dd-5b95f8896a1f",
+        "timestamp": "2025-09-03T15:26:16+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
