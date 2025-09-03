@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDC Init Webhook Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .info code {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .test-section {
+            padding: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .test-section h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: #667eea;
+            color: white;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button.secondary {
+            background: #6c757d;
+        }
+        
+        button.secondary:hover {
+            background: #5a6268;
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+        
+        button.success {
+            background: #28a745;
+        }
+        
+        button.success:hover {
+            background: #218838;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .response {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .sample-requests {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .sample-requests h4 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .sample-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .sample-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .sample-item h5 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .sample-item p {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .price-breakdown {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .price-breakdown h4 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status.loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 ONDC Init Webhook Test Interface</h1>
+        </div>
+        
+        <div class="info">
+            <strong>Endpoint:</strong> <code>http://localhost/ondc/src/on_init_callback.php</code><br>
+            <strong>Method:</strong> POST<br>
+            <strong>Content-Type:</strong> application/json
+        </div>
+        
+        <div class="test-section">
+            <h3>📋 Test Request Data</h3>
+            <textarea id="requestData" placeholder="Enter your JSON request data here..."></textarea>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Quick Test Buttons</h3>
+            <div class="button-group">
+                <button onclick="testRiceApple()">Test Rice + Apple</button>
+                <button onclick="testChocolate()">Test Chocolate</button>
+                <button onclick="testMixedItems()">Test Mixed Items</button>
+                <button onclick="testRiceOnly()">Test Rice Only</button>
+                <button onclick="testInvalidRequest()">Test Invalid Request</button>
+                <button onclick="clearRequest()" class="secondary">Clear</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📤 Send Request</h3>
+            <button onclick="sendCustomRequest()" class="success">🚀 Send Request</button>
+            <div id="status" class="status" style="display: none;"></div>
+            <div id="response" class="response" style="display: none;"></div>
+        </div>
+        
+        <div class="sample-requests">
+            <h4>📚 Sample Request Types</h4>
+            <div class="sample-item" onclick="loadSample('riceApple')">
+                <h5>🛒 Rice + Apple Init Request</h5>
+                <p>2kg Organic Basmati Rice + 1kg Fresh Apples (Delhi delivery)</p>
+            </div>
+            <div class="sample-item" onclick="loadSample('chocolate')">
+                <h5>🍫 Chocolate Init Request</h5>
+                <p>3 packs of Dairy Milk Chocolate (Mumbai delivery)</p>
+            </div>
+            <div class="sample-item" onclick="loadSample('mixedItems')">
+                <h5>🛍️ Mixed Items Init Request</h5>
+                <p>1kg Rice + 2kg Apples + 2 packs Chocolate (Bangalore delivery)</p>
+            </div>
+            <div class="sample-item" onclick="loadSample('riceOnly')">
+                <h5>🌾 Rice Only Init Request</h5>
+                <p>1kg Organic Basmati Rice (Delhi delivery)</p>
+            </div>
+            <div class="sample-item" onclick="loadSample('invalidRequest')">
+                <h5>❌ Invalid Request</h5>
+                <p>Missing required fields to test error handling</p>
+            </div>
+        </div>
+        
+        <div class="price-breakdown">
+            <h4>💰 Expected Price Breakdown</h4>
+            <div class="price-item">
+                <span>Rice + Apple (2kg + 1kg):</span>
+                <span>₹420.00</span>
+            </div>
+            <div class="price-item">
+                <span>Chocolate (3 packs):</span>
+                <span>₹150.00</span>
+            </div>
+            <div class="price-item">
+                <span>Mixed Items (1kg + 2kg + 2 packs):</span>
+                <span>₹580.00</span>
+            </div>
+            <div class="price-item">
+                <span>Rice Only (1kg):</span>
+                <span>₹120.00</span>
+            </div>
+            <div class="price-item">
+                <span>Delivery Charge:</span>
+                <span>₹40-70 (city-based)</span>
+            </div>
+            <div class="price-item">
+                <span>GST (18%):</span>
+                <span>Calculated on subtotal</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const samples = {
+            riceApple: {
+                context: {
+                    domain: "ONDC:RET10",
+                    country: "IND",
+                    city: "std:080",
+                    action: "init",
+                    bap_id: "test-bap.ondc.org",
+                    bap_uri: "https://test-bap.ondc.org",
+                    transaction_id: "txn_" + Date.now(),
+                    message_id: "msg_" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    order: {
+                        items: [
+                            {
+                                id: "item_001",
+                                quantity: 2,
+                                descriptor: {
+                                    name: "Organic Basmati Rice"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "120"
+                                },
+                                category_id: "Foodgrains",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            },
+                            {
+                                id: "item_002",
+                                quantity: 1,
+                                descriptor: {
+                                    name: "Fresh Apples"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "180"
+                                },
+                                category_id: "Fruits",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            }
+                        ],
+                        fulfillment: {
+                            type: "Delivery",
+                            locations: [
+                                {
+                                    city: { name: "Delhi" },
+                                    state: { name: "Delhi" },
+                                    country: { name: "India" }
+                                }
+                            ]
+                        },
+                        payment: {
+                            type: "ON-ORDER",
+                            collected_by: "BAP"
+                        },
+                        billing: {
+                            name: "John Doe",
+                            address: {
+                                locality: "Connaught Place",
+                                city: "Delhi",
+                                state: "Delhi",
+                                country: "India"
+                            },
+                            email: "john.doe@example.com",
+                            phone: "+91-9876543210"
+                        }
+                    }
+                }
+            },
+            
+            chocolate: {
+                context: {
+                    domain: "ONDC:RET10",
+                    country: "IND",
+                    city: "std:080",
+                    action: "init",
+                    bap_id: "test-bap.ondc.org",
+                    bap_uri: "https://test-bap.ondc.org",
+                    transaction_id: "txn_" + Date.now(),
+                    message_id: "msg_" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    order: {
+                        items: [
+                            {
+                                id: "item_003",
+                                quantity: 3,
+                                descriptor: {
+                                    name: "Dairy Milk Chocolate"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "50"
+                                },
+                                category_id: "Snacks",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            }
+                        ],
+                        fulfillment: {
+                            type: "Delivery",
+                            locations: [
+                                {
+                                    city: { name: "Mumbai" },
+                                    state: { name: "Maharashtra" },
+                                    country: { name: "India" }
+                                }
+                            ]
+                        },
+                        payment: {
+                            type: "ON-ORDER",
+                            collected_by: "BAP"
+                        },
+                        billing: {
+                            name: "Jane Smith",
+                            address: {
+                                locality: "Bandra West",
+                                city: "Mumbai",
+                                state: "Maharashtra",
+                                country: "India"
+                            },
+                            email: "jane.smith@example.com",
+                            phone: "+91-9876543211"
+                        }
+                    }
+                }
+            },
+            
+            mixedItems: {
+                context: {
+                    domain: "ONDC:RET10",
+                    country: "IND",
+                    city: "std:080",
+                    action: "init",
+                    bap_id: "test-bap.ondc.org",
+                    bap_uri: "https://test-bap.ondc.org",
+                    transaction_id: "txn_" + Date.now(),
+                    message_id: "msg_" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    order: {
+                        items: [
+                            {
+                                id: "item_001",
+                                quantity: 1,
+                                descriptor: {
+                                    name: "Organic Basmati Rice"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "120"
+                                },
+                                category_id: "Foodgrains",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            },
+                            {
+                                id: "item_002",
+                                quantity: 2,
+                                descriptor: {
+                                    name: "Fresh Apples"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "180"
+                                },
+                                category_id: "Fruits",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            },
+                            {
+                                id: "item_003",
+                                quantity: 2,
+                                descriptor: {
+                                    name: "Dairy Milk Chocolate"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "50"
+                                },
+                                category_id: "Snacks",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            }
+                        ],
+                        fulfillment: {
+                            type: "Delivery",
+                            locations: [
+                                {
+                                    city: { name: "Bangalore" },
+                                    state: { name: "Karnataka" },
+                                    country: { name: "India" }
+                                }
+                            ]
+                        },
+                        payment: {
+                            type: "ON-ORDER",
+                            collected_by: "BAP"
+                        },
+                        billing: {
+                            name: "Bob Wilson",
+                            address: {
+                                locality: "Indiranagar",
+                                city: "Bangalore",
+                                state: "Karnataka",
+                                country: "India"
+                            },
+                            email: "bob.wilson@example.com",
+                            phone: "+91-9876543212"
+                        }
+                    }
+                }
+            },
+            
+            riceOnly: {
+                context: {
+                    domain: "ONDC:RET10",
+                    country: "IND",
+                    city: "std:080",
+                    action: "init",
+                    bap_id: "test-bap.ondc.org",
+                    bap_uri: "https://test-bap.ondc.org",
+                    transaction_id: "txn_" + Date.now(),
+                    message_id: "msg_" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    order: {
+                        items: [
+                            {
+                                id: "item_001",
+                                quantity: 1,
+                                descriptor: {
+                                    name: "Organic Basmati Rice"
+                                },
+                                price: {
+                                    currency: "INR",
+                                    value: "120"
+                                },
+                                category_id: "Foodgrains",
+                                fulfillment_id: "fulfillment_001",
+                                location_id: "location_001"
+                            }
+                        ],
+                        fulfillment: {
+                            type: "Delivery",
+                            locations: [
+                                {
+                                    city: { name: "Delhi" },
+                                    state: { name: "Delhi" },
+                                    country: { name: "India" }
+                                }
+                            ]
+                        },
+                        payment: {
+                            type: "ON-ORDER",
+                            collected_by: "BAP"
+                        },
+                        billing: {
+                            name: "Alice Johnson",
+                            address: {
+                                locality: "Lajpat Nagar",
+                                city: "Delhi",
+                                state: "Delhi",
+                                country: "India"
+                            },
+                            email: "alice.johnson@example.com",
+                            phone: "+91-9876543213"
+                        }
+                    }
+                }
+            },
+            
+            invalidRequest: {
+                context: {
+                    domain: "ONDC:RET10"
+                    // Missing required fields
+                }
+            }
+        };
+
+        function loadSample(type) {
+            document.getElementById('requestData').value = JSON.stringify(samples[type], null, 2);
+        }
+
+        function testRiceApple() {
+            loadSample('riceApple');
+        }
+
+        function testChocolate() {
+            loadSample('chocolate');
+        }
+
+        function testMixedItems() {
+            loadSample('mixedItems');
+        }
+
+        function testRiceOnly() {
+            loadSample('riceOnly');
+        }
+
+        function testInvalidRequest() {
+            loadSample('invalidRequest');
+        }
+
+        function clearRequest() {
+            document.getElementById('requestData').value = '';
+            document.getElementById('response').style.display = 'none';
+            document.getElementById('status').style.display = 'none';
+        }
+
+        async function sendCustomRequest() {
+            const requestData = document.getElementById('requestData').value;
+            const statusDiv = document.getElementById('status');
+            const responseDiv = document.getElementById('response');
+            
+            if (!requestData.trim()) {
+                showStatus('Please enter request data', 'error');
+                return;
+            }
+            
+            try {
+                const jsonData = JSON.parse(requestData);
+                
+                showStatus('Sending request...', 'loading');
+                
+                const response = await fetch('src/on_init_callback.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+                
+                const responseText = await response.text();
+                let responseData;
+                
+                try {
+                    responseData = JSON.parse(responseText);
+                } catch (e) {
+                    responseData = { raw_response: responseText };
+                }
+                
+                if (response.ok) {
+                    showStatus('Request successful!', 'success');
+                    showResponse(JSON.stringify(responseData, null, 2));
+                } else {
+                    showStatus(`Request failed with status ${response.status}`, 'error');
+                    showResponse(responseText);
+                }
+                
+            } catch (error) {
+                showStatus('Error: ' + error.message, 'error');
+                showResponse('Error occurred while processing request');
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+        }
+
+        function showResponse(content) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.textContent = content;
+            responseDiv.style.display = 'block';
+        }
+
+        // Load default sample on page load
+        loadSample('riceApple');
+    </script>
+</body>
+</html>

@@ -1,0 +1,1967 @@
+[2025-09-03 16:19:01] 🚀 Received ONDC Init Request
+[2025-09-03 16:19:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "f428ec55-e7e7-4cb4-99a1-66e0ae84fc79",
+        "message_id": "970d1301-9382-491a-8ca2-7ea240b071e6",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_001",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Organic Basmati Rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_002",
+                    "quantity": 1,
+                    "descriptor": {
+                        "name": "Fresh Apples"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            }
+        }
+    }
+}
+[2025-09-03 16:19:01] Extracted Init Parameters: {
+    "domain": "ONDC:RET10",
+    "items": [
+        {
+            "id": "item_001",
+            "quantity": 2,
+            "descriptor": {
+                "name": "Organic Basmati Rice"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "120"
+            },
+            "category_id": "Foodgrains",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        },
+        {
+            "id": "item_002",
+            "quantity": 1,
+            "descriptor": {
+                "name": "Fresh Apples"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "180"
+            },
+            "category_id": "Fruits",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        }
+    ],
+    "fulfillment": {
+        "type": "Delivery",
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+    },
+    "billing": {
+        "name": "Customer Name",
+        "address": {
+            "locality": "Customer Address",
+            "city": "Delhi",
+            "state": "Delhi",
+            "country": "India"
+        },
+        "email": "customer@example.com",
+        "phone": "+91-XXXXXXXXXX"
+    },
+    "quote": null,
+    "customer": null
+}
+[2025-09-03 16:19:01] Processing init for 2 items
+[2025-09-03 16:19:01] ✅ Init processed successfully
+[2025-09-03 16:19:01] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "f428ec55-e7e7-4cb4-99a1-66e0ae84fc79",
+        "message_id": "a34c3218-fff8-4a92-9276-07ae9f959901",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "order": {
+            "id": "order_68b84e556dfc4",
+            "state": "Created",
+            "provider": {
+                "id": "provider_001",
+                "descriptor": {
+                    "name": "Rozana Store",
+                    "short_desc": "Your neighborhood grocery store",
+                    "long_desc": "Trusted grocery store serving the community with quality products"
+                },
+                "locations": [
+                    {
+                        "id": "location_001",
+                        "descriptor": {
+                            "name": "Rozana Main Store"
+                        },
+                        "address": {
+                            "locality": "Connaught Place",
+                            "city": "Delhi",
+                            "state": "Delhi",
+                            "country": "India"
+                        }
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "item_001",
+                    "descriptor": {
+                        "name": "Organic Basmati Rice",
+                        "short_desc": "Premium quality organic basmati rice",
+                        "long_desc": "Premium quality organic basmati rice",
+                        "brand": "Organic Valley",
+                        "images": [
+                            "https:\/\/example.com\/rice1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 2
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Organic Valley Farms",
+                        "rating": 4.5,
+                        "reviews": 1250
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                },
+                {
+                    "id": "item_002",
+                    "descriptor": {
+                        "name": "Fresh Apples",
+                        "short_desc": "Fresh red apples from Kashmir",
+                        "long_desc": "Fresh red apples from Kashmir",
+                        "brand": "Kashmir Fresh",
+                        "images": [
+                            "https:\/\/example.com\/apples1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 1,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 1
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Kashmir Fresh Fruits",
+                        "rating": 4.3,
+                        "reviews": 890
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "3 days",
+                        "refund_policy": "Replacement for damaged items"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "fulfillment_001",
+                    "type": "Delivery",
+                    "provider_name": "Rozana Delivery",
+                    "rating": 4.5,
+                    "state": {
+                        "descriptor": {
+                            "name": "Order confirmed"
+                        }
+                    },
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Customer Name"
+                        },
+                        "contact": {
+                            "phone": "+91-XXXXXXXXXX",
+                            "email": "customer@example.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": {
+                                    "locality": "Customer Address",
+                                    "city": "Delhi",
+                                    "state": "Delhi",
+                                    "country": "India"
+                                }
+                            }
+                        }
+                    ],
+                    "estimated_delivery": {
+                        "time": "2025-09-05T16:19:01+02:00",
+                        "range": {
+                            "start": "2025-09-04T16:19:01+02:00",
+                            "end": "2025-09-06T16:19:01+02:00"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "payment_001",
+                    "type": "ON-ORDER",
+                    "collected_by": "BAP",
+                    "params": {
+                        "amount": "555.6",
+                        "currency": "INR"
+                    },
+                    "status": "PENDING",
+                    "time": {
+                        "label": "Payment Due",
+                        "timestamp": "2025-09-03T16:19:01+02:00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "555.6"
+                },
+                "breakup": [
+                    {
+                        "title": "Subtotal",
+                        "price": {
+                            "currency": "INR",
+                            "value": "420"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60"
+                        }
+                    },
+                    {
+                        "title": "GST (18%)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "75.6"
+                        }
+                    },
+                    {
+                        "title": "Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "555.6"
+                        }
+                    }
+                ]
+            },
+            "customer": {
+                "id": "customer_001",
+                "person": {
+                    "name": "Customer Name"
+                },
+                "contact": {
+                    "phone": "+91-XXXXXXXXXX",
+                    "email": "customer@example.com"
+                },
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                }
+            },
+            "created_at": "2025-09-03T16:19:01+02:00",
+            "updated_at": "2025-09-03T16:19:01+02:00"
+        }
+    }
+}
+[2025-09-03 16:19:01] 🚀 Received ONDC Init Request
+[2025-09-03 16:19:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b84e556edb3",
+        "message_id": "msg_68b84e556edb6",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_001",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Organic Basmati Rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_002",
+                    "quantity": 1,
+                    "descriptor": {
+                        "name": "Fresh Apples"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "billing": {
+                "name": "John Doe",
+                "address": {
+                    "locality": "Connaught Place",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "john.doe@example.com",
+                "phone": "+91-9876543210"
+            }
+        }
+    }
+}
+[2025-09-03 16:19:01] Extracted Init Parameters: {
+    "domain": "ONDC:RET10",
+    "items": [
+        {
+            "id": "item_001",
+            "quantity": 2,
+            "descriptor": {
+                "name": "Organic Basmati Rice"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "120"
+            },
+            "category_id": "Foodgrains",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        },
+        {
+            "id": "item_002",
+            "quantity": 1,
+            "descriptor": {
+                "name": "Fresh Apples"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "180"
+            },
+            "category_id": "Fruits",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        }
+    ],
+    "fulfillment": {
+        "type": "Delivery",
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+    },
+    "billing": {
+        "name": "John Doe",
+        "address": {
+            "locality": "Connaught Place",
+            "city": "Delhi",
+            "state": "Delhi",
+            "country": "India"
+        },
+        "email": "john.doe@example.com",
+        "phone": "+91-9876543210"
+    },
+    "quote": null,
+    "customer": null
+}
+[2025-09-03 16:19:01] Processing init for 2 items
+[2025-09-03 16:19:01] ✅ Init processed successfully
+[2025-09-03 16:19:01] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b84e556edb3",
+        "message_id": "1676c93f-db0b-4561-9009-05fc90b9969f",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "order": {
+            "id": "order_68b84e556f7ae",
+            "state": "Created",
+            "provider": {
+                "id": "provider_001",
+                "descriptor": {
+                    "name": "Rozana Store",
+                    "short_desc": "Your neighborhood grocery store",
+                    "long_desc": "Trusted grocery store serving the community with quality products"
+                },
+                "locations": [
+                    {
+                        "id": "location_001",
+                        "descriptor": {
+                            "name": "Rozana Main Store"
+                        },
+                        "address": {
+                            "locality": "Connaught Place",
+                            "city": "Delhi",
+                            "state": "Delhi",
+                            "country": "India"
+                        }
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "item_001",
+                    "descriptor": {
+                        "name": "Organic Basmati Rice",
+                        "short_desc": "Premium quality organic basmati rice",
+                        "long_desc": "Premium quality organic basmati rice",
+                        "brand": "Organic Valley",
+                        "images": [
+                            "https:\/\/example.com\/rice1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 2
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Organic Valley Farms",
+                        "rating": 4.5,
+                        "reviews": 1250
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                },
+                {
+                    "id": "item_002",
+                    "descriptor": {
+                        "name": "Fresh Apples",
+                        "short_desc": "Fresh red apples from Kashmir",
+                        "long_desc": "Fresh red apples from Kashmir",
+                        "brand": "Kashmir Fresh",
+                        "images": [
+                            "https:\/\/example.com\/apples1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 1,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 1
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Kashmir Fresh Fruits",
+                        "rating": 4.3,
+                        "reviews": 890
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "3 days",
+                        "refund_policy": "Replacement for damaged items"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "fulfillment_001",
+                    "type": "Delivery",
+                    "provider_name": "Rozana Delivery",
+                    "rating": 4.5,
+                    "state": {
+                        "descriptor": {
+                            "name": "Order confirmed"
+                        }
+                    },
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Customer Name"
+                        },
+                        "contact": {
+                            "phone": "+91-XXXXXXXXXX",
+                            "email": "customer@example.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": {
+                                    "locality": "Customer Address",
+                                    "city": "Delhi",
+                                    "state": "Delhi",
+                                    "country": "India"
+                                }
+                            }
+                        }
+                    ],
+                    "estimated_delivery": {
+                        "time": "2025-09-05T16:19:01+02:00",
+                        "range": {
+                            "start": "2025-09-04T16:19:01+02:00",
+                            "end": "2025-09-06T16:19:01+02:00"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "payment_001",
+                    "type": "ON-ORDER",
+                    "collected_by": "BAP",
+                    "params": {
+                        "amount": "555.6",
+                        "currency": "INR"
+                    },
+                    "status": "PENDING",
+                    "time": {
+                        "label": "Payment Due",
+                        "timestamp": "2025-09-03T16:19:01+02:00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "555.6"
+                },
+                "breakup": [
+                    {
+                        "title": "Subtotal",
+                        "price": {
+                            "currency": "INR",
+                            "value": "420"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60"
+                        }
+                    },
+                    {
+                        "title": "GST (18%)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "75.6"
+                        }
+                    },
+                    {
+                        "title": "Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "555.6"
+                        }
+                    }
+                ]
+            },
+            "customer": {
+                "id": "customer_001",
+                "person": {
+                    "name": "Customer Name"
+                },
+                "contact": {
+                    "phone": "+91-XXXXXXXXXX",
+                    "email": "customer@example.com"
+                },
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                }
+            },
+            "created_at": "2025-09-03T16:19:01+02:00",
+            "updated_at": "2025-09-03T16:19:01+02:00"
+        }
+    }
+}
+[2025-09-03 16:19:01] 🚀 Received ONDC Init Request
+[2025-09-03 16:19:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b84e5570ccf",
+        "message_id": "msg_68b84e5570cd4",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_003",
+                    "quantity": 3,
+                    "descriptor": {
+                        "name": "Dairy Milk Chocolate"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "50"
+                    },
+                    "category_id": "Snacks",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Mumbai"
+                        },
+                        "state": {
+                            "name": "Maharashtra"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "billing": {
+                "name": "Jane Smith",
+                "address": {
+                    "locality": "Bandra West",
+                    "city": "Mumbai",
+                    "state": "Maharashtra",
+                    "country": "India"
+                },
+                "email": "jane.smith@example.com",
+                "phone": "+91-9876543211"
+            }
+        }
+    }
+}
+[2025-09-03 16:19:01] Extracted Init Parameters: {
+    "domain": "ONDC:RET10",
+    "items": [
+        {
+            "id": "item_003",
+            "quantity": 3,
+            "descriptor": {
+                "name": "Dairy Milk Chocolate"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "50"
+            },
+            "category_id": "Snacks",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        }
+    ],
+    "fulfillment": {
+        "type": "Delivery",
+        "locations": [
+            {
+                "city": {
+                    "name": "Mumbai"
+                },
+                "state": {
+                    "name": "Maharashtra"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+    },
+    "billing": {
+        "name": "Jane Smith",
+        "address": {
+            "locality": "Bandra West",
+            "city": "Mumbai",
+            "state": "Maharashtra",
+            "country": "India"
+        },
+        "email": "jane.smith@example.com",
+        "phone": "+91-9876543211"
+    },
+    "quote": null,
+    "customer": null
+}
+[2025-09-03 16:19:01] Processing init for 1 items
+[2025-09-03 16:19:01] ✅ Init processed successfully
+[2025-09-03 16:19:01] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b84e5570ccf",
+        "message_id": "50f7ff1d-dc70-4597-a31b-1935b99ed073",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "order": {
+            "id": "order_68b84e55717b4",
+            "state": "Created",
+            "provider": {
+                "id": "provider_001",
+                "descriptor": {
+                    "name": "Rozana Store",
+                    "short_desc": "Your neighborhood grocery store",
+                    "long_desc": "Trusted grocery store serving the community with quality products"
+                },
+                "locations": [
+                    {
+                        "id": "location_001",
+                        "descriptor": {
+                            "name": "Rozana Main Store"
+                        },
+                        "address": {
+                            "locality": "Connaught Place",
+                            "city": "Delhi",
+                            "state": "Delhi",
+                            "country": "India"
+                        }
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "item_003",
+                    "descriptor": {
+                        "name": "Dairy Milk Chocolate",
+                        "short_desc": "Classic dairy milk chocolate bar",
+                        "long_desc": "Classic dairy milk chocolate bar",
+                        "brand": "Cadbury",
+                        "images": [
+                            "https:\/\/example.com\/chocolate1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "50"
+                    },
+                    "category_id": "Snacks",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 3,
+                        "measure": {
+                            "unit": "pack",
+                            "value": 3
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Cadbury India",
+                        "rating": 4.7,
+                        "reviews": 2100
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "fulfillment_001",
+                    "type": "Delivery",
+                    "provider_name": "Rozana Delivery",
+                    "rating": 4.5,
+                    "state": {
+                        "descriptor": {
+                            "name": "Order confirmed"
+                        }
+                    },
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Customer Name"
+                        },
+                        "contact": {
+                            "phone": "+91-XXXXXXXXXX",
+                            "email": "customer@example.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": {
+                                    "locality": "Customer Address",
+                                    "city": "Delhi",
+                                    "state": "Delhi",
+                                    "country": "India"
+                                }
+                            }
+                        }
+                    ],
+                    "estimated_delivery": {
+                        "time": "2025-09-05T16:19:01+02:00",
+                        "range": {
+                            "start": "2025-09-04T16:19:01+02:00",
+                            "end": "2025-09-06T16:19:01+02:00"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "payment_001",
+                    "type": "ON-ORDER",
+                    "collected_by": "BAP",
+                    "params": {
+                        "amount": "247",
+                        "currency": "INR"
+                    },
+                    "status": "PENDING",
+                    "time": {
+                        "label": "Payment Due",
+                        "timestamp": "2025-09-03T16:19:01+02:00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "247"
+                },
+                "breakup": [
+                    {
+                        "title": "Subtotal",
+                        "price": {
+                            "currency": "INR",
+                            "value": "150"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "70"
+                        }
+                    },
+                    {
+                        "title": "GST (18%)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "27"
+                        }
+                    },
+                    {
+                        "title": "Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "247"
+                        }
+                    }
+                ]
+            },
+            "customer": {
+                "id": "customer_001",
+                "person": {
+                    "name": "Customer Name"
+                },
+                "contact": {
+                    "phone": "+91-XXXXXXXXXX",
+                    "email": "customer@example.com"
+                },
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                }
+            },
+            "created_at": "2025-09-03T16:19:01+02:00",
+            "updated_at": "2025-09-03T16:19:01+02:00"
+        }
+    }
+}
+[2025-09-03 16:19:01] 🚀 Received ONDC Init Request
+[2025-09-03 16:19:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b84e55726fd",
+        "message_id": "msg_68b84e5572702",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_001",
+                    "quantity": 1,
+                    "descriptor": {
+                        "name": "Organic Basmati Rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_002",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Fresh Apples"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_003",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Dairy Milk Chocolate"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "50"
+                    },
+                    "category_id": "Snacks",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Bangalore"
+                        },
+                        "state": {
+                            "name": "Karnataka"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "billing": {
+                "name": "Bob Wilson",
+                "address": {
+                    "locality": "Indiranagar",
+                    "city": "Bangalore",
+                    "state": "Karnataka",
+                    "country": "India"
+                },
+                "email": "bob.wilson@example.com",
+                "phone": "+91-9876543212"
+            }
+        }
+    }
+}
+[2025-09-03 16:19:01] Extracted Init Parameters: {
+    "domain": "ONDC:RET10",
+    "items": [
+        {
+            "id": "item_001",
+            "quantity": 1,
+            "descriptor": {
+                "name": "Organic Basmati Rice"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "120"
+            },
+            "category_id": "Foodgrains",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        },
+        {
+            "id": "item_002",
+            "quantity": 2,
+            "descriptor": {
+                "name": "Fresh Apples"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "180"
+            },
+            "category_id": "Fruits",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        },
+        {
+            "id": "item_003",
+            "quantity": 2,
+            "descriptor": {
+                "name": "Dairy Milk Chocolate"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "50"
+            },
+            "category_id": "Snacks",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        }
+    ],
+    "fulfillment": {
+        "type": "Delivery",
+        "locations": [
+            {
+                "city": {
+                    "name": "Bangalore"
+                },
+                "state": {
+                    "name": "Karnataka"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+    },
+    "billing": {
+        "name": "Bob Wilson",
+        "address": {
+            "locality": "Indiranagar",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "country": "India"
+        },
+        "email": "bob.wilson@example.com",
+        "phone": "+91-9876543212"
+    },
+    "quote": null,
+    "customer": null
+}
+[2025-09-03 16:19:01] Processing init for 3 items
+[2025-09-03 16:19:01] ✅ Init processed successfully
+[2025-09-03 16:19:01] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b84e55726fd",
+        "message_id": "d3d7b220-655c-448d-914d-8a57fcc3f878",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "order": {
+            "id": "order_68b84e5573760",
+            "state": "Created",
+            "provider": {
+                "id": "provider_001",
+                "descriptor": {
+                    "name": "Rozana Store",
+                    "short_desc": "Your neighborhood grocery store",
+                    "long_desc": "Trusted grocery store serving the community with quality products"
+                },
+                "locations": [
+                    {
+                        "id": "location_001",
+                        "descriptor": {
+                            "name": "Rozana Main Store"
+                        },
+                        "address": {
+                            "locality": "Connaught Place",
+                            "city": "Delhi",
+                            "state": "Delhi",
+                            "country": "India"
+                        }
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "item_001",
+                    "descriptor": {
+                        "name": "Organic Basmati Rice",
+                        "short_desc": "Premium quality organic basmati rice",
+                        "long_desc": "Premium quality organic basmati rice",
+                        "brand": "Organic Valley",
+                        "images": [
+                            "https:\/\/example.com\/rice1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 1,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 1
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Organic Valley Farms",
+                        "rating": 4.5,
+                        "reviews": 1250
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                },
+                {
+                    "id": "item_002",
+                    "descriptor": {
+                        "name": "Fresh Apples",
+                        "short_desc": "Fresh red apples from Kashmir",
+                        "long_desc": "Fresh red apples from Kashmir",
+                        "brand": "Kashmir Fresh",
+                        "images": [
+                            "https:\/\/example.com\/apples1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 2
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Kashmir Fresh Fruits",
+                        "rating": 4.3,
+                        "reviews": 890
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "3 days",
+                        "refund_policy": "Replacement for damaged items"
+                    }
+                },
+                {
+                    "id": "item_003",
+                    "descriptor": {
+                        "name": "Dairy Milk Chocolate",
+                        "short_desc": "Classic dairy milk chocolate bar",
+                        "long_desc": "Classic dairy milk chocolate bar",
+                        "brand": "Cadbury",
+                        "images": [
+                            "https:\/\/example.com\/chocolate1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "50"
+                    },
+                    "category_id": "Snacks",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "pack",
+                            "value": 2
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Cadbury India",
+                        "rating": 4.7,
+                        "reviews": 2100
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "fulfillment_001",
+                    "type": "Delivery",
+                    "provider_name": "Rozana Delivery",
+                    "rating": 4.5,
+                    "state": {
+                        "descriptor": {
+                            "name": "Order confirmed"
+                        }
+                    },
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Customer Name"
+                        },
+                        "contact": {
+                            "phone": "+91-XXXXXXXXXX",
+                            "email": "customer@example.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": {
+                                    "locality": "Customer Address",
+                                    "city": "Delhi",
+                                    "state": "Delhi",
+                                    "country": "India"
+                                }
+                            }
+                        }
+                    ],
+                    "estimated_delivery": {
+                        "time": "2025-09-05T16:19:01+02:00",
+                        "range": {
+                            "start": "2025-09-04T16:19:01+02:00",
+                            "end": "2025-09-06T16:19:01+02:00"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "payment_001",
+                    "type": "ON-ORDER",
+                    "collected_by": "BAP",
+                    "params": {
+                        "amount": "754.4",
+                        "currency": "INR"
+                    },
+                    "status": "PENDING",
+                    "time": {
+                        "label": "Payment Due",
+                        "timestamp": "2025-09-03T16:19:01+02:00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "754.4"
+                },
+                "breakup": [
+                    {
+                        "title": "Subtotal",
+                        "price": {
+                            "currency": "INR",
+                            "value": "580"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "70"
+                        }
+                    },
+                    {
+                        "title": "GST (18%)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "104.4"
+                        }
+                    },
+                    {
+                        "title": "Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "754.4"
+                        }
+                    }
+                ]
+            },
+            "customer": {
+                "id": "customer_001",
+                "person": {
+                    "name": "Customer Name"
+                },
+                "contact": {
+                    "phone": "+91-XXXXXXXXXX",
+                    "email": "customer@example.com"
+                },
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                }
+            },
+            "created_at": "2025-09-03T16:19:01+02:00",
+            "updated_at": "2025-09-03T16:19:01+02:00"
+        }
+    }
+}
+[2025-09-03 16:19:01] 🚀 Received ONDC Init Request
+[2025-09-03 16:19:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10"
+    }
+}
+[2025-09-03 16:19:01] ❌ Error processing init: Missing required field: message
+[2025-09-03 16:24:39] 🚀 Received ONDC Init Request
+[2025-09-03 16:24:39] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b84e556edb3",
+        "message_id": "msg_68b84e556edb6",
+        "timestamp": "2025-09-03T16:19:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_001",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Organic Basmati Rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_002",
+                    "quantity": 1,
+                    "descriptor": {
+                        "name": "Fresh Apples"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "billing": {
+                "name": "John Doe",
+                "address": {
+                    "locality": "Connaught Place",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "john.doe@example.com",
+                "phone": "+91-9876543210"
+            }
+        }
+    }
+}
+[2025-09-03 16:24:39] Extracted Init Parameters: {
+    "domain": "ONDC:RET10",
+    "items": [
+        {
+            "id": "item_001",
+            "quantity": 2,
+            "descriptor": {
+                "name": "Organic Basmati Rice"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "120"
+            },
+            "category_id": "Foodgrains",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        },
+        {
+            "id": "item_002",
+            "quantity": 1,
+            "descriptor": {
+                "name": "Fresh Apples"
+            },
+            "price": {
+                "currency": "INR",
+                "value": "180"
+            },
+            "category_id": "Fruits",
+            "fulfillment_id": "fulfillment_001",
+            "location_id": "location_001"
+        }
+    ],
+    "fulfillment": {
+        "type": "Delivery",
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+    },
+    "billing": {
+        "name": "John Doe",
+        "address": {
+            "locality": "Connaught Place",
+            "city": "Delhi",
+            "state": "Delhi",
+            "country": "India"
+        },
+        "email": "john.doe@example.com",
+        "phone": "+91-9876543210"
+    },
+    "quote": null,
+    "customer": null
+}
+[2025-09-03 16:24:39] Processing init for 2 items
+[2025-09-03 16:24:39] ✅ Init processed successfully
+[2025-09-03 16:24:39] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b84e556edb3",
+        "message_id": "b3050ae8-cb7c-40d0-ab0a-492cf2185aa1",
+        "timestamp": "2025-09-03T16:24:39+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "order": {
+            "id": "order_68b84fa7932d6",
+            "state": "Created",
+            "provider": {
+                "id": "provider_001",
+                "descriptor": {
+                    "name": "Rozana Store",
+                    "short_desc": "Your neighborhood grocery store",
+                    "long_desc": "Trusted grocery store serving the community with quality products"
+                },
+                "locations": [
+                    {
+                        "id": "location_001",
+                        "descriptor": {
+                            "name": "Rozana Main Store"
+                        },
+                        "address": {
+                            "locality": "Connaught Place",
+                            "city": "Delhi",
+                            "state": "Delhi",
+                            "country": "India"
+                        }
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "item_001",
+                    "descriptor": {
+                        "name": "Organic Basmati Rice",
+                        "short_desc": "Premium quality organic basmati rice",
+                        "long_desc": "Premium quality organic basmati rice",
+                        "brand": "Organic Valley",
+                        "images": [
+                            "https:\/\/example.com\/rice1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 2
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Organic Valley Farms",
+                        "rating": 4.5,
+                        "reviews": 1250
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "7 days",
+                        "refund_policy": "Full refund for damaged items"
+                    }
+                },
+                {
+                    "id": "item_002",
+                    "descriptor": {
+                        "name": "Fresh Apples",
+                        "short_desc": "Fresh red apples from Kashmir",
+                        "long_desc": "Fresh red apples from Kashmir",
+                        "brand": "Kashmir Fresh",
+                        "images": [
+                            "https:\/\/example.com\/apples1.jpg"
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001",
+                    "quantity": {
+                        "count": 1,
+                        "measure": {
+                            "unit": "kg",
+                            "value": 1
+                        }
+                    },
+                    "seller_details": {
+                        "name": "Kashmir Fresh Fruits",
+                        "rating": 4.3,
+                        "reviews": 890
+                    },
+                    "return_policy": {
+                        "returnable": true,
+                        "return_window": "3 days",
+                        "refund_policy": "Replacement for damaged items"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "fulfillment_001",
+                    "type": "Delivery",
+                    "provider_name": "Rozana Delivery",
+                    "rating": 4.5,
+                    "state": {
+                        "descriptor": {
+                            "name": "Order confirmed"
+                        }
+                    },
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Customer Name"
+                        },
+                        "contact": {
+                            "phone": "+91-XXXXXXXXXX",
+                            "email": "customer@example.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": {
+                                    "locality": "Customer Address",
+                                    "city": "Delhi",
+                                    "state": "Delhi",
+                                    "country": "India"
+                                }
+                            }
+                        }
+                    ],
+                    "estimated_delivery": {
+                        "time": "2025-09-05T16:24:39+02:00",
+                        "range": {
+                            "start": "2025-09-04T16:24:39+02:00",
+                            "end": "2025-09-06T16:24:39+02:00"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "payment_001",
+                    "type": "ON-ORDER",
+                    "collected_by": "BAP",
+                    "params": {
+                        "amount": "555.6",
+                        "currency": "INR"
+                    },
+                    "status": "PENDING",
+                    "time": {
+                        "label": "Payment Due",
+                        "timestamp": "2025-09-03T16:24:39+02:00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-XXXXXXXXXX"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "555.6"
+                },
+                "breakup": [
+                    {
+                        "title": "Subtotal",
+                        "price": {
+                            "currency": "INR",
+                            "value": "420"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60"
+                        }
+                    },
+                    {
+                        "title": "GST (18%)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "75.6"
+                        }
+                    },
+                    {
+                        "title": "Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "555.6"
+                        }
+                    }
+                ]
+            },
+            "customer": {
+                "id": "customer_001",
+                "person": {
+                    "name": "Customer Name"
+                },
+                "contact": {
+                    "phone": "+91-XXXXXXXXXX",
+                    "email": "customer@example.com"
+                },
+                "address": {
+                    "locality": "Customer Address",
+                    "city": "Delhi",
+                    "state": "Delhi",
+                    "country": "India"
+                }
+            },
+            "created_at": "2025-09-03T16:24:39+02:00",
+            "updated_at": "2025-09-03T16:24:39+02:00"
+        }
+    }
+}
