@@ -15,7 +15,7 @@ class ONDCInitCallback {
     
     public function __construct() {
         // Create logs directory if it doesn't exist
-        $this->logFile = dirname(__DIR__) . '/logs/on_init_callback.log';
+        $this->logFile = dirname(__DIR__) . '/logs/on_init.log';
         $logsDir = dirname($this->logFile);
         if (!is_dir($logsDir)) {
             mkdir($logsDir, 0755, true);
@@ -689,7 +689,7 @@ if (php_sapi_name() === 'cli') {
     echo "📋 Testing with sample init request...\n\n";
     $response = $callback->handleInitRequest($sampleRequest);
     
-    echo "\n🎯 Test completed! Check logs/on_init_callback.log for details.\n";
+    echo "\n🎯 Test completed! Check logs/on_init.log for details.\n";
     
 } else {
     // Handle HTTP requests

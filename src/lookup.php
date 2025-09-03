@@ -300,10 +300,10 @@ if (php_sapi_name() === 'cli') {
     } else {
         echo "ONDC Lookup API\n";
         echo "Usage:\n";
-        echo "  php lookup_api.php --exact   # Generate exact lookup auth header\n";
-        echo "  php lookup_api.php --test    # Test the lookup API\n";
-        echo "  php lookup_api.php --payload # Show exact payload\n";
-        echo "  php lookup_api.php --stats   # Show configuration\n";
+        echo "  php lookup.php --exact   # Generate exact lookup auth header\n";
+        echo "  php lookup.php --test    # Test the lookup API\n";
+        echo "  php lookup.php --payload # Show exact payload\n";
+        echo "  php lookup.php --stats   # Show configuration\n";
         echo "\n";
     }
 }

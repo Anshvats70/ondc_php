@@ -1660,3 +1660,199 @@
         }
     }
 }
+[2025-09-03 18:59:33] 🛒 Received ONDC Select Request
+[2025-09-03 18:59:33] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "select",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b84717c0805",
+        "message_id": "msg_68b84717c0808",
+        "timestamp": "2025-09-03T15:48:07+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "item_001",
+                    "quantity": 2,
+                    "descriptor": {
+                        "name": "Organic Basmati Rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120"
+                    },
+                    "category_id": "Foodgrains",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                },
+                {
+                    "id": "item_002",
+                    "quantity": 1,
+                    "descriptor": {
+                        "name": "Fresh Apples"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "180"
+                    },
+                    "category_id": "Fruits",
+                    "fulfillment_id": "fulfillment_001",
+                    "location_id": "location_001"
+                }
+            ],
+            "fulfillment": {
+                "type": "Delivery",
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-03 18:59:33] Processing selection for domain: ONDC:RET10
+[2025-09-03 18:59:33] Items count: 2
+[2025-09-03 18:59:33] Processing item: item_001
+[2025-09-03 18:59:33] Processing item: item_002
+[2025-09-03 18:59:33] ✅ Selection processed successfully
+[2025-09-03 18:59:33] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.2.0",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "bpp_id": "seller-app.ondc.org",
+        "bpp_uri": "https:\/\/seller-app.ondc.org",
+        "transaction_id": "txn_68b84717c0805",
+        "message_id": "f087d919-e8ec-4fca-a16d-be8a1e853147",
+        "timestamp": "2025-09-03T18:59:33+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "seller-001",
+                "name": "Fresh Grocery Store",
+                "descriptor": {
+                    "name": "Fresh Grocery Store",
+                    "short_desc": "Your trusted source for fresh groceries"
+                }
+            },
+            "items": [
+                {
+                    "id": "item_001",
+                    "descriptor": {
+                        "name": "Organic Rice",
+                        "description": "Premium quality organic rice"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "120.00"
+                    },
+                    "quantity": {
+                        "available": 100,
+                        "unit": "kg"
+                    },
+                    "fulfillment_id": "fulfillment_001"
+                },
+                {
+                    "id": "item_002",
+                    "descriptor": {
+                        "name": "Fresh Tomatoes",
+                        "description": "Fresh red tomatoes"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "80.00"
+                    },
+                    "quantity": {
+                        "available": 50,
+                        "unit": "kg"
+                    },
+                    "fulfillment_id": "fulfillment_002"
+                }
+            ],
+            "fulfillment": {
+                "id": "fulfillment_001",
+                "type": "Delivery",
+                "provider_name": "Local Delivery",
+                "tracking": false,
+                "start": {
+                    "location": {
+                        "gps": "12.9716,77.5946",
+                        "address": {
+                            "locality": "Koramangala",
+                            "city": "Bangalore",
+                            "state": "Karnataka",
+                            "country": "India"
+                        }
+                    }
+                },
+                "end": {
+                    "location": {
+                        "gps": "12.9716,77.5946",
+                        "address": {
+                            "locality": "Customer Location",
+                            "city": "Bangalore",
+                            "state": "Karnataka",
+                            "country": "India"
+                        }
+                    }
+                }
+            },
+            "payment": {
+                "id": "payment_001",
+                "type": "ON-ORDER",
+                "collected_by": "BPP",
+                "params": {
+                    "amount": "0.00",
+                    "currency": "INR"
+                }
+            },
+            "billing": {
+                "name": "Customer Name",
+                "address": {
+                    "locality": "Customer Location",
+                    "city": "Bangalore",
+                    "state": "Karnataka",
+                    "country": "India"
+                },
+                "email": "customer@example.com",
+                "phone": "+91-9876543210"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "16,000.00"
+                },
+                "breakup": [
+                    {
+                        "title": "Item Total",
+                        "price": {
+                            "currency": "INR",
+                            "value": "16,000.00"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -15,7 +15,7 @@ class ONDCSearchCallback {
     
     public function __construct() {
         // Create logs directory if it doesn't exist
-        $this->logFile = dirname(__DIR__) . '/logs/on_search_callback.log';
+        $this->logFile = dirname(__DIR__) . '/logs/on_search.log';
         $logsDir = dirname($this->logFile);
         if (!is_dir($logsDir)) {
             mkdir($logsDir, 0755, true);
@@ -383,7 +383,7 @@ if (php_sapi_name() === 'cli') {
     echo "📋 Testing with sample search request...\n\n";
     $response = $callback->handleSearchRequest($sampleRequest);
     
-    echo "\n🎯 Test completed! Check logs/on_search_callback.log for details.\n";
+    echo "\n🎯 Test completed! Check logs/on_search.log for details.\n";
     
 } else {
     // Handle HTTP requests
