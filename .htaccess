@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Handle specific PHP files directly (like on_search.php)
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} \.php$
+    RewriteRule ^(.*)$ $1 [L]
+    
+    # Redirect everything else to public directory
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
