@@ -12,6 +12,7 @@ $dotenv->safeload();
 class ONDCSearchCallback {
     
     private $logFile;
+    private $baseUrl;
     
     public function __construct() {
         // Create logs directory if it doesn't exist
@@ -20,6 +21,9 @@ class ONDCSearchCallback {
         if (!is_dir($logsDir)) {
             mkdir($logsDir, 0755, true);
         }
+        
+        // Load base URL from environment
+        $this->baseUrl = $_ENV['BASE_URL'] ?? 'http://localhost';
     }
     
     /**
@@ -218,7 +222,7 @@ class ONDCSearchCallback {
                 'action' => 'on_search',
                 'core_version' => '1.2.0',
                 'bap_id' => $_ENV['SUBSCRIBER_ID'] ?? 'neo-server.rozana.in',
-                'bap_uri' => $_ENV['SUBSCRIBER_URL'] ?? 'https://neo-server.rozana.in/bapl',
+                'bap_uri' => $_ENV['SUBSCRIBER_URL'] ?? $this->baseUrl . '/bapl',
                 'transaction_id' => $requestData['context']['transaction_id'] ?? Uuid::uuid4()->toString(),
                 'message_id' => $messageId,
                 'timestamp' => $timestamp,
@@ -303,7 +307,7 @@ class ONDCSearchCallback {
             'context' => [
                 'action' => 'on_search',
                 'bap_id' => $_ENV['SUBSCRIBER_ID'] ?? 'neo-server.rozana.in',
-                'bap_uri' => $_ENV['SUBSCRIBER_URL'] ?? 'https://neo-server.rozana.in/bapl',
+                'bap_uri' => $_ENV['SUBSCRIBER_URL'] ?? $this->baseUrl . '/bapl',
                 'message_id' => Uuid::uuid4()->toString(),
                 'timestamp' => date('c'),
                 'ttl' => 'PT30S'
@@ -347,7 +351,7 @@ if (php_sapi_name() === 'cli') {
             'city' => 'std:080',
             'action' => 'search',
             'bap_id' => 'test-bap.ondc.org',
-            'bap_uri' => 'https://test-bap.ondc.org',
+            'bap_uri' => $this->baseUrl . '/test-bap',
             'transaction_id' => Uuid::uuid4()->toString(),
             'message_id' => Uuid::uuid4()->toString(),
             'timestamp' => date('c'),

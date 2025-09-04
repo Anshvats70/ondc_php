@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDC Search Endpoint Tester</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            height: 120px;
+            font-family: monospace;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-success {
+            background-color: #27ae60;
+        }
+        .btn-success:hover {
+            background-color: #229954;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .response.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .response.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #666;
+        }
+        .tab.active {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .preset-examples {
+            margin-top: 20px;
+        }
+        .example-btn {
+            background-color: #95a5a6;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 12px;
+        }
+        .example-btn:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 ONDC Search Endpoint Tester</h1>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('manual')">Manual Input</button>
+            <button class="tab" onclick="showTab('preset')">Preset Examples</button>
+            <button class="tab" onclick="showTab('custom')">Custom JSON</button>
+        </div>
+        
+        <!-- Manual Input Tab -->
+        <div id="manual" class="tab-content active">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="domain">Domain:</label>
+                    <select id="domain">
+                        <option value="ONDC:RET10">ONDC:RET10 (Grocery)</option>
+                        <option value="ONDC:RET11">ONDC:RET11 (F&B)</option>
+                        <option value="ONDC:RET12">ONDC:RET12 (Personal Care)</option>
+                        <option value="ONDC:RET13">ONDC:RET13 (Home Care)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="Foodgrains">Foodgrains</option>
+                        <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Personal Care">Personal Care</option>
+                        <option value="Home Care">Home Care</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City Code:</label>
+                    <input type="text" id="city" value="std:080" placeholder="e.g., std:080">
+                </div>
+                
+                <div class="form-group">
+                    <label for="bap_id">BAP ID:</label>
+                    <input type="text" id="bap_id" value="neo-server.rozana.in" placeholder="e.g., neo-server.rozana.in">
+                </div>
+                
+                <div class="form-group">
+                    <label for="bap_uri">BAP URI:</label>
+                    <input type="text" id="bap_uri" value="https://neo-server.rozana.in/ondc" placeholder="e.g., https://neo-server.rozana.in/ondc">
+                </div>
+                
+                <button type="submit" class="btn btn-success">🔍 Send Search Request</button>
+            </form>
+        </div>
+        
+        <!-- Preset Examples Tab -->
+        <div id="preset" class="tab-content">
+            <h3>Quick Test Examples</h3>
+            <div class="preset-examples">
+                <button class="example-btn" onclick="loadExample('foodgrains')">Foodgrains Search</button>
+                <button class="example-btn" onclick="loadExample('fruits')">Fruits & Vegetables</button>
+                <button class="example-btn" onclick="loadExample('beverages')">Beverages (F&B)</button>
+                <button class="example-btn" onclick="loadExample('personal_care')">Personal Care</button>
+                <button class="example-btn" onclick="loadExample('home_care')">Home Care</button>
+            </div>
+            
+            <div class="form-group">
+                <label>Generated JSON:</label>
+                <textarea id="presetJson" readonly></textarea>
+            </div>
+            
+            <button class="btn btn-success" onclick="sendPresetRequest()">🚀 Send Request</button>
+        </div>
+        
+        <!-- Custom JSON Tab -->
+        <div id="custom" class="tab-content">
+            <div class="form-group">
+                <label for="customJson">Custom JSON Payload:</label>
+                <textarea id="customJson" placeholder="Paste your custom JSON here..."></textarea>
+            </div>
+            
+            <button class="btn btn-success" onclick="sendCustomRequest()">🚀 Send Custom Request</button>
+        </div>
+        
+        <div id="response" class="response" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Form submission
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const searchData = {
+                context: {
+                    domain: document.getElementById('domain').value,
+                    action: "search",
+                    country: "IND",
+                    city: document.getElementById('city').value,
+                    core_version: "1.2.0",
+                    bap_id: document.getElementById('bap_id').value,
+                    bap_uri: document.getElementById('bap_uri').value,
+                    transaction_id: "T" + Date.now(),
+                    message_id: "M" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    intent: {
+                        category: {
+                            id: document.getElementById('category').value
+                        },
+                        fulfillment: {
+                            type: "Delivery"
+                        },
+                        payment: {
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3"
+                        },
+                        tags: [
+                            {
+                                code: "bap_terms",
+                                list: [
+                                    {
+                                        code: "static_terms",
+                                        value: ""
+                                    },
+                                    {
+                                        code: "static_terms_new",
+                                        value: "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+                                    },
+                                    {
+                                        code: "effective_date",
+                                        value: "2023-10-01T00:00:00.000Z"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            };
+            
+            sendSearchRequest(searchData);
+        });
+        
+        // Load preset examples
+        function loadExample(type) {
+            const examples = {
+                foodgrains: {
+                    domain: "ONDC:RET10",
+                    category: "Foodgrains"
+                },
+                fruits: {
+                    domain: "ONDC:RET10",
+                    category: "Fruits and Vegetables"
+                },
+                beverages: {
+                    domain: "ONDC:RET11",
+                    category: "Beverages"
+                },
+                personal_care: {
+                    domain: "ONDC:RET12",
+                    category: "Personal Care"
+                },
+                home_care: {
+                    domain: "ONDC:RET13",
+                    category: "Home Care"
+                }
+            };
+            
+            const example = examples[type];
+            const searchData = {
+                context: {
+                    domain: example.domain,
+                    action: "search",
+                    country: "IND",
+                    city: "std:080",
+                    core_version: "1.2.0",
+                    bap_id: "neo-server.rozana.in",
+                    bap_uri: "https://neo-server.rozana.in/ondc",
+                    transaction_id: "T" + Date.now(),
+                    message_id: "M" + Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ttl: "PT30S"
+                },
+                message: {
+                    intent: {
+                        category: {
+                            id: example.category
+                        },
+                        fulfillment: {
+                            type: "Delivery"
+                        },
+                        payment: {
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3"
+                        }
+                    }
+                }
+            };
+            
+            document.getElementById('presetJson').value = JSON.stringify(searchData, null, 2);
+        }
+        
+        // Send preset request
+        function sendPresetRequest() {
+            const jsonText = document.getElementById('presetJson').value;
+            if (!jsonText.trim()) {
+                alert('Please load an example first');
+                return;
+            }
+            
+            try {
+                const searchData = JSON.parse(jsonText);
+                sendSearchRequest(searchData);
+            } catch (e) {
+                alert('Invalid JSON: ' + e.message);
+            }
+        }
+        
+        // Send custom request
+        function sendCustomRequest() {
+            const jsonText = document.getElementById('customJson').value;
+            if (!jsonText.trim()) {
+                alert('Please enter JSON payload');
+                return;
+            }
+            
+            try {
+                const searchData = JSON.parse(jsonText);
+                sendSearchRequest(searchData);
+            } catch (e) {
+                alert('Invalid JSON: ' + e.message);
+            }
+        }
+        
+        // Send search request
+        function sendSearchRequest(searchData) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.className = 'response';
+            responseDiv.textContent = '🔄 Sending request...';
+            
+            fetch('src/search.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(searchData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseDiv.className = 'response success';
+                responseDiv.textContent = '✅ Response received:\n\n' + JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                responseDiv.className = 'response error';
+                responseDiv.textContent = '❌ Error: ' + error.message;
+            });
+        }
+        
+        // Load default example
+        window.onload = function() {
+            loadExample('foodgrains');
+        };
+    </script>
+</body>
+</html>

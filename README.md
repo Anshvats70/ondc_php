@@ -26,7 +26,7 @@ composer install
 ```
 2. ENV variables
 ```sh
-SIGNING_PRIV_KEY="your signing private key"
+SIGNING_PRIVATE_KEY="your signing private key"
 SIGNING_PUB_KEY="your signing public key"
 ENC_PUB_KEY="your encryption/crypto public key"
 ENC_PRIV_KEY="your encryption/crypto private key"
@@ -48,7 +48,7 @@ Encryption pub key: MCowBQYDK2VuAyEAFT6F4dxn1waTvLUbY5tdKh/IezuOp+tlHkAwQw82qXU=
 ```
 4. Create authorisation header
 ```sh
-# REQUEST_BODY, SIGNING_PRIV_KEY, SUBSCRIBER_ID, UNIQUE_KEY_ID should be set
+# REQUEST_BODY, SIGNING_PRIVATE_KEY, SUBSCRIBER_ID, UNIQUE_KEY_ID should be set
 composer run start -- -s
 
 # OUTPUT

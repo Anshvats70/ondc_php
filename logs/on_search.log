@@ -1,0 +1,244 @@
+[2025-09-04 07:42:16] 🔍 Received ONDC Search Request
+[2025-09-04 07:42:16] Request Data: {
+    "test": "data"
+}
+[2025-09-04 07:42:16] ❌ Error processing search: Missing required field: context
+[2025-09-04 07:44:21] 🔍 Received ONDC Search Request
+[2025-09-04 07:44:21] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "bap_id": "test-bap.ondc.org",
+        "bap_uri": "https:\/\/test-bap.ondc.org",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "msg_68b83fcbb3520",
+        "timestamp": "2025-09-03T15:16:59+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "item": {
+                "descriptor": {
+                    "name": "Rice"
+                },
+                "category_id": "Foodgrains"
+            },
+            "fulfillment": {
+                "locations": [
+                    {
+                        "city": {
+                            "name": "Delhi"
+                        },
+                        "state": {
+                            "name": "Delhi"
+                        },
+                        "country": {
+                            "name": "India"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+[2025-09-04 07:44:21] Extracted Search Parameters: {
+    "domain": "ONDC:RET10",
+    "search_type": "Rice",
+    "category": "Foodgrains",
+    "fulfillment": {
+        "locations": [
+            {
+                "city": {
+                    "name": "Delhi"
+                },
+                "state": {
+                    "name": "Delhi"
+                },
+                "country": {
+                    "name": "India"
+                }
+            }
+        ]
+    },
+    "location": {
+        "city": {
+            "name": "Delhi"
+        },
+        "state": {
+            "name": "Delhi"
+        },
+        "country": {
+            "name": "India"
+        }
+    },
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+}
+[2025-09-04 07:44:21] Processing search for: Rice
+[2025-09-04 07:44:21] ✅ Search processed successfully
+[2025-09-04 07:44:21] Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "https:\/\/neo-server.rozana.in\/bapl",
+        "transaction_id": "txn_68b83fcbb351d",
+        "message_id": "895b2139-4318-4c5e-a6d5-0ecde5cd0e44",
+        "timestamp": "2025-09-04T07:44:21+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/descriptor": {
+                "name": "Rozana Catalog",
+                "short_desc": "Fresh groceries and household items",
+                "long_desc": "Wide selection of fresh groceries, dairy, fruits, vegetables and household essentials"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "provider_001",
+                    "descriptor": {
+                        "name": "Rozana Store",
+                        "short_desc": "Your neighborhood grocery store",
+                        "long_desc": "Trusted grocery store serving the community with quality products"
+                    },
+                    "locations": [
+                        {
+                            "id": "location_001",
+                            "descriptor": {
+                                "name": "Rozana Main Store"
+                            },
+                            "address": {
+                                "locality": "Connaught Place",
+                                "city": "Delhi",
+                                "state": "Delhi",
+                                "country": "India"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Organic Basmati Rice",
+                                "short_desc": "Premium quality organic basmati rice",
+                                "long_desc": "Premium quality organic basmati rice",
+                                "brand": "Organic Valley",
+                                "images": [
+                                    "https:\/\/example.com\/rice1.jpg"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "fulfillment_001",
+                            "location_id": "location_001"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 07:56:45] 🔍 Received ONDC Search Request
+[2025-09-04 07:56:45] Request Data: {
+    "test": "data"
+}
+[2025-09-04 07:56:45] ❌ Error processing search: Missing required field: context
+[2025-09-04 07:57:03] 🔍 Received ONDC Search Request
+[2025-09-04 07:57:03] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T_FINAL_TEST",
+        "message_id": "c4a4b7e4-6f97-4681-b1c8-23f067055e3b",
+        "timestamp": "2025-09-04T07:57:03+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 07:57:03] ❌ Error processing search: Missing intent in message

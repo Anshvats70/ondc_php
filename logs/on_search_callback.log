@@ -1640,3 +1640,96 @@
         }
     }
 }
+[2025-09-04 07:28:32] 📥 Received on_search callback
+Headers: {"User-Agent":"Mozilla\/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell\/5.1.26100.4768","Content-Type":"application\/json","Host":"localhost","Content-Length":"16"}
+Data: {
+    "test": "data"
+}
+--------------------------------------------------------------------------------
+[2025-09-04 07:29:21] 📥 Received on_search callback
+Headers: {"Host":"localhost","Content-Type":"application\/json","Accept":"application\/json","Content-Length":"1160"}
+Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "test-buyer.local",
+        "bap_uri": "http:\/\/localhost\/ondc",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "https:\/\/neo-server.rozana.in\/ondc",
+        "transaction_id": "T1756963761",
+        "message_id": "msg_68b923b150d5c",
+        "timestamp": "2025-09-04T05:29:21+00:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+--------------------------------------------------------------------------------

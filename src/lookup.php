@@ -75,7 +75,7 @@ class ONDCLookupAPI {
         // Sign the string
         $signature = base64_encode(sodium_crypto_sign_detached(
             $signingString, 
-            base64_decode($_ENV['SIGNING_PRIV_KEY'])
+            base64_decode($_ENV['SIGNING_PRIVATE_KEY'])
         ));
         
         $subscriberId = $_ENV['SUBSCRIBER_ID'];

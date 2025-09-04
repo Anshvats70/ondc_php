@@ -73,7 +73,7 @@ function create_authorisation_header(string $request_body, string $created = nul
     }
 
     $signing_key = create_signing_string(hash_msg($request_body), $created, $expires);
-    $signature = sign_response($signing_key, $_ENV['SIGNING_PRIV_KEY']);
+    $signature = sign_response($signing_key, $_ENV['SIGNING_PRIVATE_KEY']);
 
     $subscriber_id = $_ENV['SUBSCRIBER_ID'];
     $unique_key_id = $_ENV['UNIQUE_KEY_ID'];
