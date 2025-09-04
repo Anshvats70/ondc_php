@@ -399,7 +399,7 @@ class ONDCSearch {
             
             // Extract the base URL from BAP URI
             $bapBaseUrl = $this->extractBaseUrl($bapUri);
-            $onSearchUrl = $bapBaseUrl . 'on_search.php';
+            $onSearchUrl = $bapBaseUrl . 'on_search';
             
             $this->log("🚀 Triggering on_search callback to: " . $onSearchUrl);
             

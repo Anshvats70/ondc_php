@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Remove .php extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Handle /on_search endpoint
+RewriteRule ^on_search$ on_search.php [NC,L]
+
+# Handle /search endpoint  
+RewriteRule ^search$ search.php [NC,L]
+
+# Enable CORS headers
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization"

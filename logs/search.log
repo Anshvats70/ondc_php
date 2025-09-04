@@ -4610,3 +4610,927 @@
         }
     }
 }
+[2025-09-04 08:04:34] 🔧 ONDCSearch initialized
+[2025-09-04 08:04:34] Subscriber ID: neo-server.rozana.in
+[2025-09-04 08:04:34] Unique Key ID: 3bd6f47a-d2ea-4210-a4ad-2a99dd66585b
+[2025-09-04 08:04:34] Signing Private Key: Set
+[2025-09-04 08:04:34] Signing Public Key: Not set
+[2025-09-04 08:04:34] Base URL: http://localhost/ondc/src
+[2025-09-04 08:04:34] 🔍 Received ONDC Search Request
+[2025-09-04 08:04:34] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T_CLEAN_URL",
+        "message_id": "M_CLEAN_URL",
+        "timestamp": "2023-06-03T08:00:00.000Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "id": "Foodgrains"
+            },
+            "fulfillment": {
+                "type": "Delivery"
+            }
+        }
+    }
+}
+[2025-09-04 08:04:34] Processing search for domain: ONDC:RET10
+[2025-09-04 08:04:34] Category: {"id":"Foodgrains"}
+[2025-09-04 08:04:34] City: std:080
+[2025-09-04 08:04:34] 🚀 Triggering on_search callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:04:34] 📤 Sending callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:04:34] 📋 Callback data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T_CLEAN_URL",
+        "message_id": "1407e38c-76ac-4ca9-97d0-40a8a177e0b5",
+        "timestamp": "2025-09-04T08:04:34+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:04:34] 🔑 Auth header: Signature keyId="neo-server.rozana.in|3bd6f47a-d2ea-4210-a4ad-2a99dd66585b|ed25519",algorithm="ed25519",created="1756965874",expires="1756969474",headers="(created) (expires) digest",signature="yZC4Iwt/FAzFGXLOZ4iaJCfC2UZJoVN+nnTDsIxyTN/zLvY6hu7RxLoo/GPRzg71ijAqIFZA3/qQnmfsqUpjBQ=="
+[2025-09-04 08:04:34] ✅ Callback sent successfully. HTTP Code: 200
+[2025-09-04 08:04:34] 📥 Response: [2025-09-04 08:04:34] 🔍 Received ONDC Search Request
+[2025-09-04 08:04:34] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T_CLEAN_URL",
+        "message_id": "1407e38c-76ac-4ca9-97d0-40a8a177e0b5",
+        "timestamp": "2025-09-04T08:04:34+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:04:34] ❌ Error processing search: Missing intent in message
+{
+    "context": {
+        "action": "on_search",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src\/bapl",
+        "message_id": "17f033be-ea66-4da1-b570-6e71c8013250",
+        "timestamp": "2025-09-04T08:04:34+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "NACK"
+        },
+        "error": {
+            "code": "500",
+            "message": "Missing intent in message"
+        }
+    }
+}
+[2025-09-04 08:04:34] ✅ Search processed successfully
+[2025-09-04 08:04:34] Search Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T_CLEAN_URL",
+        "message_id": "5bb43fa4-321b-4dbf-b35f-4895e7f2562b",
+        "timestamp": "2025-09-04T08:04:34+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:01] 🔧 ONDCSearch initialized
+[2025-09-04 08:07:01] Subscriber ID: neo-server.rozana.in
+[2025-09-04 08:07:01] Unique Key ID: 3bd6f47a-d2ea-4210-a4ad-2a99dd66585b
+[2025-09-04 08:07:01] Signing Private Key: Set
+[2025-09-04 08:07:01] Signing Public Key: Not set
+[2025-09-04 08:07:01] Base URL: http://localhost/ondc/src
+[2025-09-04 08:07:01] 🔍 Received ONDC Search Request
+[2025-09-04 08:07:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T123",
+        "message_id": "M123",
+        "timestamp": "2023-06-03T08:00:00.000Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "id": "Foodgrains"
+            },
+            "fulfillment": {
+                "type": "Delivery"
+            }
+        }
+    }
+}
+[2025-09-04 08:07:01] Processing search for domain: ONDC:RET10
+[2025-09-04 08:07:01] Category: {"id":"Foodgrains"}
+[2025-09-04 08:07:01] City: std:080
+[2025-09-04 08:07:01] 🚀 Triggering on_search callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:07:01] 📤 Sending callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:07:01] 📋 Callback data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T123",
+        "message_id": "2a8b4182-7cfa-4fbf-9c34-44e53ecbf84a",
+        "timestamp": "2025-09-04T08:07:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:01] 🔑 Auth header: Signature keyId="neo-server.rozana.in|3bd6f47a-d2ea-4210-a4ad-2a99dd66585b|ed25519",algorithm="ed25519",created="1756966021",expires="1756969621",headers="(created) (expires) digest",signature="Tmzmx41Pz7ZcK2OCfwRdYVGA+7UWREzuyv8HdHHSKge8F5IwDbdLolZLpdeudsYchCMRGmZlfDwMrFAhoMNGDw=="
+[2025-09-04 08:07:01] ✅ Callback sent successfully. HTTP Code: 200
+[2025-09-04 08:07:01] 📥 Response: [2025-09-04 08:07:01] 🔍 Received ONDC Search Request
+[2025-09-04 08:07:01] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T123",
+        "message_id": "2a8b4182-7cfa-4fbf-9c34-44e53ecbf84a",
+        "timestamp": "2025-09-04T08:07:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:01] ❌ Error processing search: Missing intent in message
+{
+    "context": {
+        "action": "on_search",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src\/bapl",
+        "message_id": "e8673dbb-84b0-48bd-9246-e600c02f3921",
+        "timestamp": "2025-09-04T08:07:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "NACK"
+        },
+        "error": {
+            "code": "500",
+            "message": "Missing intent in message"
+        }
+    }
+}
+[2025-09-04 08:07:01] ✅ Search processed successfully
+[2025-09-04 08:07:01] Search Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T123",
+        "message_id": "90441f0f-29d3-4daf-814d-7b1d79a946de",
+        "timestamp": "2025-09-04T08:07:01+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:06] 🔧 ONDCSearch initialized
+[2025-09-04 08:07:06] Subscriber ID: neo-server.rozana.in
+[2025-09-04 08:07:06] Unique Key ID: 3bd6f47a-d2ea-4210-a4ad-2a99dd66585b
+[2025-09-04 08:07:06] Signing Private Key: Set
+[2025-09-04 08:07:06] Signing Public Key: Not set
+[2025-09-04 08:07:06] Base URL: http://localhost/ondc/src
+[2025-09-04 08:07:06] 🔍 Received ONDC Search Request
+[2025-09-04 08:07:06] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T123",
+        "message_id": "M123",
+        "timestamp": "2023-06-03T08:00:00.000Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "id": "Foodgrains"
+            },
+            "fulfillment": {
+                "type": "Delivery"
+            }
+        }
+    }
+}
+[2025-09-04 08:07:06] Processing search for domain: ONDC:RET10
+[2025-09-04 08:07:06] Category: {"id":"Foodgrains"}
+[2025-09-04 08:07:06] City: std:080
+[2025-09-04 08:07:06] 🚀 Triggering on_search callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:07:06] 📤 Sending callback to: http://localhost/ondc/src/on_search
+[2025-09-04 08:07:06] 📋 Callback data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T123",
+        "message_id": "1ea005ef-2e16-46a7-b735-08ae9cb58e50",
+        "timestamp": "2025-09-04T08:07:06+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:06] 🔑 Auth header: Signature keyId="neo-server.rozana.in|3bd6f47a-d2ea-4210-a4ad-2a99dd66585b|ed25519",algorithm="ed25519",created="1756966026",expires="1756969626",headers="(created) (expires) digest",signature="syN5xEh375d/skvGcf7s32BJeOC/nlKcoxny4ld8EKji0OUK4QFrajj4rmcqSswwaPwvsSyfi/YZ3UJGIE61Bg=="
+[2025-09-04 08:07:06] ✅ Callback sent successfully. HTTP Code: 200
+[2025-09-04 08:07:06] 📥 Response: [2025-09-04 08:07:06] 🔍 Received ONDC Search Request
+[2025-09-04 08:07:06] Request Data: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "bpp_id": "neo-server.rozana.in",
+        "bpp_uri": "http:\/\/localhost\/ondc\/src\/on_select.php",
+        "transaction_id": "T123",
+        "message_id": "1ea005ef-2e16-46a7-b735-08ae9cb58e50",
+        "timestamp": "2025-09-04T08:07:06+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        },
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+[2025-09-04 08:07:06] ❌ Error processing search: Missing intent in message
+{
+    "context": {
+        "action": "on_search",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src\/bapl",
+        "message_id": "ed93efbb-e3c3-458c-89eb-cd831d6916af",
+        "timestamp": "2025-09-04T08:07:06+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "NACK"
+        },
+        "error": {
+            "code": "500",
+            "message": "Missing intent in message"
+        }
+    }
+}
+[2025-09-04 08:07:06] ✅ Search processed successfully
+[2025-09-04 08:07:06] Search Response: {
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "search",
+        "core_version": "1.2.0",
+        "bap_id": "neo-server.rozana.in",
+        "bap_uri": "http:\/\/localhost\/ondc\/src",
+        "transaction_id": "T123",
+        "message_id": "d7d498e1-f06d-4ae2-bd10-72e1945d6648",
+        "timestamp": "2025-09-04T08:07:06+02:00",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "catalog": {
+            "bpp\/fulfillments": [
+                {
+                    "id": "f1",
+                    "type": "Delivery",
+                    "provider_name": "Seller NP",
+                    "rating": "4.5",
+                    "state": {
+                        "descriptor": {
+                            "name": "Active"
+                        }
+                    }
+                }
+            ],
+            "bpp\/descriptor": {
+                "name": "Seller Network Participant",
+                "code": "SELLER_NP_001"
+            },
+            "bpp\/providers": [
+                {
+                    "id": "seller_001",
+                    "descriptor": {
+                        "name": "Premium Seller",
+                        "code": "SELLER_PREMIUM_001"
+                    },
+                    "items": [
+                        {
+                            "id": "item_001",
+                            "descriptor": {
+                                "name": "Premium Basmati Rice",
+                                "code": "RICE_BASMATI_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        },
+                        {
+                            "id": "item_002",
+                            "descriptor": {
+                                "name": "Whole Wheat Flour",
+                                "code": "WHEAT_FLOUR_001"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "45.00"
+                            },
+                            "category_id": "Foodgrains",
+                            "fulfillment_id": "f1"
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "f1",
+                            "type": "Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
